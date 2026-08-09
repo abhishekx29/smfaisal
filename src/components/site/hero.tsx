@@ -10,11 +10,12 @@ export function Hero() {
   return (
     <section className="aurora relative overflow-hidden pb-20 pt-32 sm:pb-28 sm:pt-40">
       <div className="pointer-events-none absolute inset-0 grid-lines opacity-60" aria-hidden />
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-8 px-4 sm:px-8 sm:gap-14 lg:grid-cols-[1.15fr_0.85fr]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto w-full max-w-2xl text-center sm:mx-0 sm:text-left"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-3.5 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur">
             <MapPin className="size-3.5 text-navy" />
@@ -44,18 +45,18 @@ export function Hero() {
             {profile.welcome[1]}
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Button asChild size="lg" className="rounded-xl">
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Button asChild size="lg" className="w-full justify-center rounded-xl sm:w-auto">
               <a href="#profile">
                 <FileText className="size-4" /> View CV
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-xl">
+            <Button asChild size="lg" variant="outline" className="w-full justify-center rounded-xl sm:w-auto">
               <a href="#publications">
                 <BookOpen className="size-4" /> Publications
               </a>
             </Button>
-            <Button asChild size="lg" variant="ghost" className="rounded-xl">
+            <Button asChild size="lg" variant="ghost" className="w-full justify-center rounded-xl sm:w-auto">
               <a href="#contact">
                 <Mail className="size-4" /> Contact
               </a>
@@ -74,7 +75,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.96, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto w-full max-w-sm lg:max-w-none"
+          className="relative mx-auto w-full max-w-[320px] sm:max-w-sm lg:max-w-none"
         >
           <div className="glass-panel overflow-hidden rounded-3xl p-3">
             <img

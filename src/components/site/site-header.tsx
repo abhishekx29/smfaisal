@@ -73,10 +73,10 @@ export function SiteHeader() {
         scrolled ? "py-2" : "py-4",
       )}
     >
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-8">
+      <div className="mx-auto w-full max-w-6xl px-3 sm:px-8">
         <div
           className={cn(
-            "flex items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300",
+            "flex items-center justify-between rounded-2xl px-3 py-2.5 transition-all duration-300 sm:px-4",
             scrolled ? "glass-panel" : "border border-transparent",
           )}
         >
