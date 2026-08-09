@@ -1,10 +1,10 @@
-// Content preserved from https://sites.google.com/view/dr-faisal/home
+﻿// Content preserved from https://sites.google.com/view/dr-faisal/home
 
 export const profile = {
   name: "Dr. Syed Mohammad Faisal",
   shortName: "Dr. S. M. Faisal",
-  tagline: "Assistant Professor | Finance Researcher | Jazan University, Saudi Arabia",
-  role: "Assistant Professor",
+  tagline: "Finance Strategist | Finance Researcher | Jazan University, Saudi Arabia",
+  role: "Finance Strategist",
   institution: "Jazan University",
   location: "Jazan, Saudi Arabia",
   portrait:
@@ -12,10 +12,10 @@ export const profile = {
   source: "https://sites.google.com/view/dr-faisal/home",
   welcome: [
     "Welcome to my academic website.",
-    "I am Dr. Syed Mohammad Faisal, Assistant Professor at Jazan University, Saudi Arabia. My teaching and research interests include Finance, ESG, Corporate Governance, FinTech, Artificial Intelligence in Accounting and Finance, and Sustainable Business. This website presents my academic profile, research publications, teaching experience, and professional activities.",
+    "I am Dr. Syed Mohammad Faisal, Finance Strategist at Jazan University, Saudi Arabia. My teaching and research interests include Finance, ESG, Corporate Governance, FinTech, Artificial Intelligence in Accounting and Finance, and Sustainable Business. This website presents my academic profile, research publications, teaching experience, and professional activities.",
   ],
   about: [
-    "Dr. Syed Mohammad Faisal is an Assistant Professor at Jazan University, Saudi Arabia. He holds an MBA and a PhD in Finance and has over 20 years of teaching, research, and academic administration experience.",
+    "Dr. Syed Mohammad Faisal is an Finance Strategist at Jazan University, Saudi Arabia. He holds an MBA and a PhD in Finance and has over 20 years of teaching, research, and academic administration experience.",
     "His research interests include Corporate Finance, ESG, Corporate Governance, FinTech, Artificial Intelligence in Accounting and Finance, Sustainable Business, and Financial Markets. He has published numerous research papers in international journals and actively participates in international conferences.",
     "He is committed to excellence in teaching, research, academic leadership, and mentoring students.",
   ],
@@ -35,7 +35,7 @@ export const academicProfile = [
   {
     icon: "Building2",
     label: "Current Position",
-    value: "Assistant Professor, Jazan University, Saudi Arabia",
+    value: "Finance Strategist, Jazan University, Saudi Arabia",
   },
 ];
 
@@ -91,18 +91,18 @@ export const books: Book[] = [
 ];
 
 export const articles = [
-  "Published article on “Stock Market Behavior” in ‘Hindustan Times Editorial’ in 2007.",
-  "Published article on “FOREX” in ‘Hindustan Times Editorial’ in 2007.",
-  "Published article on “Knowing Inflation” in ‘Hindustan Times Editorial’ in 2008.",
-  "Published article on “Theory of Exchange Rate in the context of inflation” in ‘Hindustan Times Editorial’ in 2008.",
-  "Published article on “Islamic Banking Instruments” in ‘Hindustan Times Editorial’ in 2009.",
+  "Published article on â€œStock Market Behaviorâ€ in â€˜Hindustan Times Editorialâ€™ in 2007.",
+  "Published article on â€œFOREXâ€ in â€˜Hindustan Times Editorialâ€™ in 2007.",
+  "Published article on â€œKnowing Inflationâ€ in â€˜Hindustan Times Editorialâ€™ in 2008.",
+  "Published article on â€œTheory of Exchange Rate in the context of inflationâ€ in â€˜Hindustan Times Editorialâ€™ in 2008.",
+  "Published article on â€œIslamic Banking Instrumentsâ€ in â€˜Hindustan Times Editorialâ€™ in 2009.",
 ];
 
 export const achievements = [
   {
     year: "2024",
     icon: "Lightbulb",
-    title: "Patent Filed — Automated Project Risk Assessment and Mitigation System",
+    title: "Patent Filed â€” Automated Project Risk Assessment and Mitigation System",
     detail:
       "Title of the Invention: AUTOMATED PROJECT RISK ASSESSMENT AND MITIGATION SYSTEM. The Patents Act, 1970 (39 of 1970), India. No. 202421005820.",
   },
@@ -116,12 +116,12 @@ export const achievements = [
   {
     year: "2025",
     icon: "Mic",
-    title: "Session Chair — ICABER’2025, Turkey",
+    title: "Session Chair â€” ICABERâ€™2025, Turkey",
     detail:
-      "Session Chair in ICABER'2025, International Conference on Applied Business & Economic Research, Turkey 7-8 Nov; 2025, “Smart Inventory, Fewer Claims: Redefining Risk and Efficiency in Insurance Management”.",
+      "Session Chair in ICABER'2025, International Conference on Applied Business & Economic Research, Turkey 7-8 Nov; 2025, â€œSmart Inventory, Fewer Claims: Redefining Risk and Efficiency in Insurance Managementâ€.",
   },
   {
-    year: "2007–2009",
+    year: "2007â€“2009",
     icon: "Newspaper",
     title: "Editorial Columns, Hindustan Times",
     detail:
@@ -145,15 +145,15 @@ export const achievements = [
 
 export const teaching = [
   {
-    period: "2009 – Present",
-    role: "Assistant Professor",
+    period: "2009 â€“ Present",
+    role: "Finance Strategist",
     org: "Jazan University, Saudi Arabia",
     detail:
       "Teaching Finance and Accounting, supervising research, academic administration and quality assurance at Applied College. Organized seminars and workshops on scientific research paper writing, investment analysis and portfolio management, and accounting and risk management.",
   },
   {
-    period: "2004 – 2009",
-    role: "Faculty — Management & Finance",
+    period: "2004 â€“ 2009",
+    role: "Faculty â€” Management & Finance",
     org: "Institutes in Lucknow, India",
     detail:
       "Taught management and finance subjects, participated in national seminars and faculty development programmes, including Lal Bahadur Shastri Institute of Management & Technology and Integral University, Lucknow.",
@@ -204,3 +204,4 @@ export const contact = {
   mapEmbed:
     "https://www.google.com/maps?q=Jazan%20University%2C%20Jazan%2C%20Saudi%20Arabia&output=embed",
 };
+

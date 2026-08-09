@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader, PageShell } from "@/components/site/page-shell";
 import { About, AcademicProfile } from "@/components/site/about";
 import { Achievements } from "@/components/site/timelines";
@@ -6,7 +6,7 @@ import { Stats } from "@/components/site/stats";
 
 const title = "About | Dr. Syed Mohammad Faisal";
 const description =
-  "Biography of Dr. Syed Mohammad Faisal — MBA and PhD in Finance with over 20 years of teaching, research and academic administration experience at Jazan University, Saudi Arabia.";
+  "Biography of Dr. Syed Mohammad Faisal â€” MBA and PhD in Finance with over 20 years of teaching, research and academic administration experience at Jazan University, Saudi Arabia.";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -30,7 +30,7 @@ function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="Dr. Syed Mohammad Faisal"
-        description="Assistant Professor | Finance Researcher | Jazan University, Saudi Arabia"
+        description="Finance Strategist | Finance Researcher | Jazan University, Saudi Arabia"
       />
       <About />
       <AcademicProfile />
@@ -39,3 +39,4 @@ function AboutPage() {
     </PageShell>
   );
 }
+

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/page-shell";
 import { Hero } from "@/components/site/hero";
 import { About, AcademicProfile, ResearchInterests } from "@/components/site/about";
@@ -12,7 +12,7 @@ import { profile } from "@/data/profile";
 
 const title = "Dr. Syed Mohammad Faisal | Finance Researcher, Jazan University";
 const description =
-  "Academic website of Dr. Syed Mohammad Faisal, Assistant Professor at Jazan University, Saudi Arabia — research in Finance, ESG, Corporate Governance, FinTech and AI in Accounting.";
+  "Academic website of Dr. Syed Mohammad Faisal, Finance Strategist at Jazan University, Saudi Arabia â€” research in Finance, ESG, Corporate Governance, FinTech and AI in Accounting.";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Person",
           name: profile.name,
-          jobTitle: "Assistant Professor",
+          jobTitle: "Finance Strategist",
           description,
           affiliation: {
             "@type": "CollegeOrUniversity",
@@ -78,3 +78,4 @@ function Home() {
     </PageShell>
   );
 }
+

@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+﻿import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowRight, BookOpen, FileText, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -31,7 +31,7 @@ export function Hero() {
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">
-            {["Assistant Professor", "Author", "Researcher"].map((role) => (
+            {["Finance Strategist", "Author", "Researcher"].map((role) => (
               <span
                 key={role}
                 className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-foreground/80"
@@ -96,3 +96,4 @@ export function Hero() {
     </section>
   );
 }
+

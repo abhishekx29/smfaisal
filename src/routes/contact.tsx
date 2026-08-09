@@ -1,10 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader, PageShell } from "@/components/site/page-shell";
 import { Contact } from "@/components/site/contact";
 
 const title = "Contact | Dr. Syed Mohammad Faisal";
 const description =
-  "Contact Dr. Syed Mohammad Faisal, Assistant Professor at Applied College, Jazan University, Saudi Arabia, for research collaboration and academic enquiries.";
+  "Contact Dr. Syed Mohammad Faisal, Finance Strategist at Applied College, Jazan University, Saudi Arabia, for research collaboration and academic enquiries.";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
@@ -34,3 +34,4 @@ function ContactPage() {
     </PageShell>
   );
 }
+
