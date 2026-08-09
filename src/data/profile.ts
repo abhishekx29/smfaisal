@@ -201,6 +201,8 @@ export const contact = {
   department: "Applied College",
   address: "Jazan, Kingdom of Saudi Arabia",
   website: "https://drsmfaisal.com",
+  email: "faisalsharar786@gmail.com",
+  phone: "00918601682557",
   mapEmbed:
     "https://www.google.com/maps?q=Jazan%20University%2C%20Jazan%2C%20Saudi%20Arabia&output=embed",
 };
