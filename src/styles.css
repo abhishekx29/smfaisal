@@ -238,6 +238,12 @@
   mask-image: radial-gradient(70% 60% at 50% 30%, black, transparent 85%);
 }
 
+@utility handwriting {
+  font-family: "Segoe Script", "Bradley Hand", "Lucida Handwriting", cursive;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
 @keyframes aurora-drift {
   0% {
     transform: translate3d(-2%, -1%, 0) scale(1);

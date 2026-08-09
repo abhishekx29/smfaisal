@@ -91,6 +91,10 @@ export function SiteHeader() {
             </span>
           </Link>
 
+          <span className="block text-sm text-foreground/90 handwriting sm:hidden">
+            s.m faisal
+          </span>
+
           <nav className="hidden items-center gap-1 lg:flex">
             {(isHome ? items : pages.map((p) => ({ href: p.to, label: p.label, id: p.to }))).map(
               (item) =>

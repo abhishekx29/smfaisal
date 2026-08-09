@@ -9,11 +9,20 @@ import {
 import { Section } from "./section";
 import { Reveal, Counter } from "./reveal";
 import { stats, testimonials } from "@/data/profile";
+import fbg from "@/assets/fbg.jpg";
 
 export function Stats() {
   return (
-    <section className="border-y border-border bg-primary py-16 text-primary-foreground sm:py-20">
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-8 px-5 sm:px-8 lg:grid-cols-5">
+    <section
+      className="relative overflow-hidden border-y border-border py-16 text-primary-foreground sm:py-20"
+      style={{
+        backgroundImage: `url(${fbg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-primary/70" aria-hidden />
+      <div className="relative mx-auto grid w-full max-w-6xl grid-cols-2 gap-8 px-5 sm:px-8 lg:grid-cols-5">
         {stats.map((s, i) => (
           <Reveal key={s.label} delay={i * 0.07} className="text-center lg:text-left">
             <p className="text-4xl font-semibold tracking-tight sm:text-5xl">
