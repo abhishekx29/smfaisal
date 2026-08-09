@@ -91,8 +91,8 @@ export function SiteHeader() {
             </span>
           </Link>
 
-          <span className="block text-sm text-foreground/90 handwriting sm:hidden">
-            s.m faisal
+          <span className="block text-2xl font-semibold text-foreground/90 handwriting sm:hidden">
+            S.M Faisal
           </span>
 
           <nav className="hidden items-center gap-1 lg:flex">
