@@ -23,12 +23,12 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "scroll-mt-28 py-20 sm:py-28",
+        "scroll-mt-20 py-12 sm:py-16",
         tone === "surface" && "surface-section border-y border-border",
         className,
       )}
     >
-      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         {(eyebrow || title || description) && (
           <Reveal className="mb-12 max-w-3xl sm:mb-16">
             {eyebrow && (

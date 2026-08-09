@@ -48,52 +48,10 @@ export function Contact() {
       eyebrow="Contact"
       title="Get in touch"
       description="For research collaboration, speaking invitations, doctoral supervision or academic enquiries."
+      className="-mt-[100px]"
     >
       <div className="grid gap-10 items-start sm:grid-cols-1 lg:grid-cols-[0.9fr_1.1fr]">
-        <Reveal direction="right" className="space-y-4">
-          {[
-            { icon: Building2, label: "Institution", value: `${contact.department}, ${contact.institution}` },
-            { icon: MapPin, label: "Location", value: contact.address },
-            { icon: Globe, label: "Academic website", value: contact.website, href: contact.website },
-            { icon: Mail, label: "Email", value: "Available via the university directory" },
-            { icon: Phone, label: "Phone", value: "Available via the university directory" },
-          ].map((item) => (
-            <div key={item.label} className="elevate-card flex items-start gap-4 rounded-2xl p-5">
-              <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/8 text-navy">
-                <item.icon className="h-4.5 w-4.5" />
-              </span>
-              <div className="min-w-0 flex-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                  {item.label}
-                </p>
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-1 block break-words whitespace-normal text-sm text-navy underline-offset-4 hover:underline"
-                  >
-                    {item.value}
-                  </a>
-                ) : (
-                  <p className="mt-1 break-words whitespace-normal text-sm text-muted-foreground">{item.value}</p>
-                )}
-              </div>
-            </div>
-          ))}
-
-          <div className="overflow-hidden rounded-2xl border border-border">
-            <iframe
-              title={`Map of ${contact.institution}`}
-              src={contact.mapEmbed}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-64 w-full border-0"
-            />
-          </div>
-        </Reveal>
-
-        <Reveal direction="left">
+        <Reveal direction="left" className="lg:col-span-2">
           <div className="elevate-card rounded-3xl p-6 sm:p-8">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
@@ -159,6 +117,49 @@ export function Contact() {
                 </p>
               </form>
             </Form>
+          </div>
+        </Reveal>
+
+        <Reveal direction="right" className="space-y-4 lg:col-span-2">
+          {[
+            { icon: Building2, label: "Institution", value: `${contact.department}, ${contact.institution}` },
+            { icon: MapPin, label: "Location", value: contact.address },
+            { icon: Globe, label: "Academic website", value: contact.website, href: contact.website },
+            { icon: Mail, label: "Email", value: "faisalsharar786@gmail.com", href: "mailto:faisalsharar786@gmail.com" },
+            { icon: Phone, label: "Phone", value: "00918601682557", href: "tel:00918601682557" },
+          ].map((item) => (
+            <div key={item.label} className="elevate-card flex items-start gap-4 rounded-2xl p-5">
+              <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/8 text-navy">
+                <item.icon className="h-4.5 w-4.5" />
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                  {item.label}
+                </p>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-1 block break-words whitespace-normal text-sm text-navy underline-offset-4 hover:underline"
+                  >
+                    {item.value}
+                  </a>
+                ) : (
+                  <p className="mt-1 break-words whitespace-normal text-sm text-muted-foreground">{item.value}</p>
+                )}
+              </div>
+            </div>
+          ))}
+
+          <div className="overflow-hidden rounded-2xl border border-border">
+            <iframe
+              title={`Map of ${contact.institution}`}
+              src={contact.mapEmbed}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-64 w-full border-0"
+            />
           </div>
         </Reveal>
       </div>

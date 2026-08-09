@@ -200,7 +200,7 @@ export const contact = {
   institution: "Jazan University",
   department: "Applied College",
   address: "Jazan, Kingdom of Saudi Arabia",
-  website: "https://sites.google.com/view/dr-faisal/home",
+  website: "https://drsmfaisal.com",
   mapEmbed:
     "https://www.google.com/maps?q=Jazan%20University%2C%20Jazan%2C%20Saudi%20Arabia&output=embed",
 };
