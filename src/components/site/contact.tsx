@@ -49,7 +49,7 @@ export function Contact() {
       title="Get in touch"
       description="For research collaboration, speaking invitations, doctoral supervision or academic enquiries."
     >
-      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="grid gap-10 items-start sm:grid-cols-1 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal direction="right" className="space-y-4">
           {[
             { icon: Building2, label: "Institution", value: `${contact.department}, ${contact.institution}` },
@@ -58,11 +58,11 @@ export function Contact() {
             { icon: Mail, label: "Email", value: "Available via the university directory" },
             { icon: Phone, label: "Phone", value: "Available via the university directory" },
           ].map((item) => (
-            <div key={item.label} className="elevate-card flex gap-4 rounded-2xl p-5">
-              <span className="mt-0.5 inline-flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/8 text-navy">
-                <item.icon className="size-4.5" />
+            <div key={item.label} className="elevate-card flex items-start gap-4 rounded-2xl p-5">
+              <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/8 text-navy">
+                <item.icon className="h-4.5 w-4.5" />
               </span>
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                   {item.label}
                 </p>
@@ -71,12 +71,12 @@ export function Contact() {
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-1 block truncate text-sm text-navy underline-offset-4 hover:underline"
+                    className="mt-1 block break-words whitespace-normal text-sm text-navy underline-offset-4 hover:underline"
                   >
                     {item.value}
                   </a>
                 ) : (
-                  <p className="mt-1 text-sm text-muted-foreground">{item.value}</p>
+                  <p className="mt-1 break-words whitespace-normal text-sm text-muted-foreground">{item.value}</p>
                 )}
               </div>
             </div>
