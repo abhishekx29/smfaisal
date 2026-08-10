@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUp, ExternalLink, GraduationCap, MapPin, Mail, Phone } from "lucide-react";
+import { ArrowUp, ExternalLink, Facebook, GraduationCap, Linkedin, MapPin, Mail, Phone, Twitter, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { contact, profile } from "@/data/profile";
 
@@ -73,6 +73,50 @@ export function SiteFooter() {
               </a>
             </li>
           </ul>
+
+          <div className="mt-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#6b7280] dark:text-[#94a3b8]">
+              Follow
+            </p>
+            <div className="mt-3 flex flex-wrap items-center gap-3">
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[#dbeafe] bg-[#eef4ff] text-[#1877f2] shadow-sm transition-shadow hover:shadow-md"
+                aria-label="Facebook"
+              >
+                <Facebook className="size-5" />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[#bfdbfe] bg-[#eff6ff] text-[#1d9bf0] shadow-sm transition-shadow hover:shadow-md"
+                aria-label="Twitter"
+              >
+                <Twitter className="size-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[#c7d2fe] bg-[#eef2ff] text-[#0a66c2] shadow-sm transition-shadow hover:shadow-md"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="size-5" />
+              </a>
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[#fecaca] bg-[#fff1f2] text-[#ff0000] shadow-sm transition-shadow hover:shadow-md"
+                aria-label="YouTube"
+              >
+                <Youtube className="size-5" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 

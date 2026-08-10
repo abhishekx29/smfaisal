@@ -1,10 +1,65 @@
 ﻿import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowRight, BookOpen, FileText, Mail, MapPin } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/profile";
 import portraitDesk from "@/assets/portrait-desk.jpg";
 
+const typedLines = [
+  "Finance Strategist",
+  "Finance Researcher",
+  "Jazan University, Saudi Arabia",
+];
+
+function TypedTagline() {
+  const [text, setText] = useState("");
+  const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">("typing");
+  const [lineIndex, setLineIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+
+  useEffect(() => {
+    const currentText = typedLines[lineIndex];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (phase === "typing") {
+      if (charIndex <= currentText.length) {
+        timeout = setTimeout(() => {
+          setText(currentText.slice(0, charIndex));
+          setCharIndex((value) => value + 1);
+        }, 80);
+      } else {
+        setPhase("pausing");
+      }
+    }
+
+    if (phase === "pausing") {
+      timeout = setTimeout(() => setPhase("deleting"), 1200);
+    }
+
+    if (phase === "deleting") {
+      if (charIndex >= 0) {
+        timeout = setTimeout(() => {
+          setText(currentText.slice(0, charIndex));
+          setCharIndex((value) => value - 1);
+        }, 40);
+      } else {
+        setLineIndex((value) => (value + 1) % typedLines.length);
+        setPhase("typing");
+        setCharIndex(0);
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [charIndex, lineIndex, phase]);
+
+  return (
+    <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl">
+      {text}
+      <span className="ml-1 inline-block animate-pulse text-navy">|</span>
+    </p>
+  );
+}
 
 export function Hero() {
   return (
@@ -26,9 +81,7 @@ export function Hero() {
             {profile.name}
           </h1>
 
-          <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            {profile.tagline}
-          </p>
+          <TypedTagline />
 
           <div className="mt-6 flex flex-wrap gap-2">
             {["Finance Strategist", "Author", "Researcher"].map((role) => (

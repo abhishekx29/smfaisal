@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Section } from "./section";
 import { Reveal } from "./reveal";
 import { books } from "@/data/profile";
+import capitalCover from "@/assets/books/capital market and investment management.jpg";
+import financeCover from "@/assets/books/finance in accounting.jpg";
+import strategicCover from "@/assets/books/strategic framework.jpg";
 
 export function Books() {
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -16,23 +19,31 @@ export function Books() {
       description="Books Publications Overview — authored and edited titles in capital markets, accounting thought, and FinTech risk."
     >
       <div className="grid gap-6 lg:grid-cols-3">
-        {books.map((book, i) => (
-          <Reveal key={book.title} delay={i * 0.08}>
-            <article className="elevate-card flex h-full flex-col overflow-hidden rounded-3xl">
-              <div className="relative flex aspect-[3/2] items-end bg-primary p-6">
+        {books.map((book, i) => {
+          const cover =
+            book.index === "1"
+              ? capitalCover
+              : book.index === "2"
+              ? financeCover
+              : strategicCover;
+
+          return (
+            <Reveal key={book.title} delay={i * 0.08}>
+              <article className="elevate-card flex h-full flex-col overflow-hidden rounded-3xl">
                 <div
-                  className="pointer-events-none absolute inset-0 opacity-25"
+                  className="relative flex aspect-[3/2] items-end p-6"
                   style={{
-                    backgroundImage:
-                      "radial-gradient(30rem 16rem at 20% 0%, white, transparent 60%)",
+                    backgroundImage: `url(${cover})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
                   }}
-                  aria-hidden
-                />
-                <BookOpen className="absolute right-5 top-5 size-6 text-primary-foreground/70" />
-                <h3 className="relative text-pretty text-xl font-semibold leading-tight tracking-tight text-primary-foreground">
-                  {book.title}
-                </h3>
-              </div>
+                >
+                  <div className="pointer-events-none absolute inset-0 bg-slate-950/40" aria-hidden />
+                  <BookOpen className="absolute right-5 top-5 size-6 text-white/75" />
+                  <h3 className="relative text-pretty text-xl font-semibold leading-tight tracking-tight text-white">
+                    {book.title}
+                  </h3>
+                </div>
 
               <div className="flex flex-1 flex-col p-6">
                 <dl className="space-y-1.5 text-sm text-muted-foreground">
@@ -83,7 +94,8 @@ export function Books() {
               </div>
             </article>
           </Reveal>
-        ))}
+          );
+        })}
       </div>
     </Section>
   );
