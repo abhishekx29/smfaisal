@@ -144,7 +144,7 @@ export function SiteFooter() {
             <Button
               variant="outline"
               size="sm"
-              className="rounded-xl transition-transform transform hover:scale-105 duration-200"
+              className="ml-[50px] rounded-xl transition-transform transform hover:scale-105 duration-200"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <ArrowUp className="size-4" /> Back to top
