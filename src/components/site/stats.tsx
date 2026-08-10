@@ -48,16 +48,18 @@ export function Testimonials() {
         <CarouselContent>
           {testimonials.map((t) => (
             <CarouselItem key={t.quote}>
-              <figure className="elevate-card rounded-3xl p-8 sm:p-12">
-                <Quote className="size-8 text-navy/40" />
-                <blockquote className="mt-6 text-pretty text-xl leading-relaxed tracking-tight sm:text-2xl">
-                  “{t.quote}”
-                </blockquote>
-                <figcaption className="mt-8 text-sm">
-                  <span className="font-semibold">{t.author}</span>
-                  <span className="text-muted-foreground"> — {t.role}</span>
-                </figcaption>
-              </figure>
+              <div className="rounded-3xl bg-gradient-to-r from-amber-300 via-amber-100 to-white p-px shadow-lg shadow-amber-200/40">
+                <figure className="elevate-card h-full rounded-[1.5rem] bg-white/95 p-8 sm:p-12 dark:bg-slate-950/95">
+                  <Quote className="size-8 text-navy/40" />
+                  <blockquote className="mt-6 text-pretty text-xl leading-relaxed tracking-tight sm:text-2xl">
+                    “{t.quote}”
+                  </blockquote>
+                  <figcaption className="mt-8 text-sm">
+                    <span className="font-semibold">{t.author}</span>
+                    <span className="text-muted-foreground"> — {t.role}</span>
+                  </figcaption>
+                </figure>
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>

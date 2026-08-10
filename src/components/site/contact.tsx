@@ -50,9 +50,9 @@ export function Contact() {
       description="For research collaboration, speaking invitations, doctoral supervision or academic enquiries."
       className="-mt-[100px]"
     >
-      <div className="grid gap-10 items-start sm:grid-cols-1 lg:grid-cols-[0.9fr_1.1fr]">
-        <Reveal direction="left" className="lg:col-span-2">
-          <div className="elevate-card rounded-3xl p-6 sm:p-8">
+      <div className="grid gap-10 items-start sm:grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] lg:place-items-center">
+        <Reveal direction="left" className="w-full">
+          <div className="elevate-card rounded-3xl p-6 sm:p-8 w-full max-w-[44rem] mx-auto">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
                 <div className="grid gap-5 sm:grid-cols-2">
@@ -120,7 +120,7 @@ export function Contact() {
           </div>
         </Reveal>
 
-        <Reveal direction="right" className="space-y-4 lg:col-span-2">
+        <Reveal direction="right" className="space-y-4 lg:justify-self-end lg:w-full">
           {[
             { icon: Building2, label: "Institution", value: `${contact.department}, ${contact.institution}` },
             { icon: MapPin, label: "Location", value: contact.address },
