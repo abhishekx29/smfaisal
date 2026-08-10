@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUp, ExternalLink, Facebook, GraduationCap, Linkedin, MapPin, Mail, Phone, Twitter, Youtube } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { contact, profile } from "@/data/profile";
 
@@ -14,6 +15,17 @@ const quickLinks = [
 ] as const;
 
 export function SiteFooter() {
+  const [siteVisits, setSiteVisits] = useState<number | null>(null);
+
+  useEffect(() => {
+    const key = "site-visit-counter";
+    const stored = window.localStorage.getItem(key);
+    const visits = stored ? Number(stored) : 0;
+    const next = visits + 1;
+    window.localStorage.setItem(key, String(next));
+    setSiteVisits(next);
+  }, []);
+
   return (
     <footer className="bg-[#f7f8fa] dark:bg-[#0b1220] text-[#0f172a] dark:text-[#cbd5e1] border-t border-border">
       <div className="mx-auto grid w-full max-w-5xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
@@ -126,9 +138,9 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {profile.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-3">
-            <a href={contact.website} target="_blank" rel="noreferrer" className="text-sm text-[#334155] dark:text-[#e6eef8] hover:underline transition-transform transform hover:scale-105 duration-200">
-              Visit website
-            </a>
+            <span className="text-sm text-[#334155] dark:text-[#e6eef8] transition-transform transform hover:scale-105 duration-200" aria-live="polite">
+              Site visits: {siteVisits ?? "—"}
+            </span>
             <Button
               variant="outline"
               size="sm"
