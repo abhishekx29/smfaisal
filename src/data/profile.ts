@@ -15,7 +15,7 @@ export const profile = {
     "I am Dr. Syed Mohammad Faisal, Finance Strategist at Jazan University, Saudi Arabia. My teaching and research interests include Finance, ESG, Corporate Governance, FinTech, Artificial Intelligence in Accounting and Finance, and Sustainable Business. This website presents my academic profile, research publications, teaching experience, and professional activities.",
   ],
   about: [
-    "Dr. Syed Mohammad Faisal is an Finance Strategist at Jazan University, Saudi Arabia. He holds an MBA and a PhD in Finance and has over 20 years of teaching, research, and academic administration experience.",
+    "Dr. Syed Mohammad Faisal is a Finance Strategist at Jazan University, Saudi Arabia. He holds an MBA and a PhD in Finance and has over 20 years of teaching, research, and academic administration experience.",
     "His research interests include Corporate Finance, ESG, Corporate Governance, FinTech, Artificial Intelligence in Accounting and Finance, Sustainable Business, and Financial Markets. He has published numerous research papers in international journals and actively participates in international conferences.",
     "He is committed to excellence in teaching, research, academic leadership, and mentoring students.",
   ],
