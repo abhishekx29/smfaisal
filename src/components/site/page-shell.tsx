@@ -20,7 +20,7 @@ function StickySocialBar() {
         color="text-[#1d9bf0]"
       />
       <SocialLink
-        href="https://www.linkedin.com"
+        href="https://www.linkedin.com/in/dr-syed-mohammad-faisal-92b39122?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         label="LinkedIn"
         icon={<Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />}
         color="text-[#0a66c2]"

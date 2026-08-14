@@ -114,7 +114,7 @@ export function SiteFooter() {
                 <Twitter className="size-5" />
               </a>
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/in/dr-syed-mohammad-faisal-92b39122?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[#c7d2fe] bg-[#eef2ff] text-[#0a66c2] shadow-sm transition-shadow hover:shadow-md"
