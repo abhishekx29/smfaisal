@@ -1,8 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUp, ExternalLink, Facebook, GraduationCap, Linkedin, MapPin, Mail, Phone, Twitter, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { Button } from "@/components/ui/button";
 import { contact, profile } from "@/data/profile";
+import { incrementSiteVisit } from "@/lib/site-visits";
 
 const quickLinks = [
   { to: "/about", label: "About" },
@@ -16,15 +18,11 @@ const quickLinks = [
 
 export function SiteFooter() {
   const [siteVisits, setSiteVisits] = useState<number | null>(null);
+  const incrementVisit = useServerFn(incrementSiteVisit);
 
   useEffect(() => {
-    const key = "site-visit-counter";
-    const stored = window.localStorage.getItem(key);
-    const visits = stored ? Number(stored) : 0;
-    const next = visits + 1;
-    window.localStorage.setItem(key, String(next));
-    setSiteVisits(next);
-  }, []);
+    incrementVisit().then(setSiteVisits).catch(() => setSiteVisits(null));
+  }, [incrementVisit]);
 
   return (
     <footer className="bg-[#f7f8fa] dark:bg-[#0b1220] text-[#0f172a] dark:text-[#cbd5e1] border-t border-border">
@@ -82,6 +80,12 @@ export function SiteFooter() {
               <Phone className="mt-0.5 size-4 shrink-0 text-[#374151] dark:text-[#94a3b8] transition-colors" />
               <a href={`tel:${contact.phone}`} className="hover:underline transition-colors hover:text-[#0f172a] dark:hover:text-white">
                 {contact.phone}
+              </a>
+            </li>
+            <li className="flex items-start gap-2.5 transition-transform transform hover:scale-105 duration-200">
+              <Phone className="mt-0.5 size-4 shrink-0 text-[#374151] dark:text-[#94a3b8] transition-colors" />
+              <a href="tel:918601682557" className="hover:underline transition-colors hover:text-[#0f172a] dark:hover:text-white">
+                918601682557
               </a>
             </li>
           </ul>
