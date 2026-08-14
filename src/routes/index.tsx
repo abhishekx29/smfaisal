@@ -10,9 +10,9 @@ import { Gallery } from "@/components/site/gallery";
 import { Contact } from "@/components/site/contact";
 import { profile } from "@/data/profile";
 
-const title = "Dr. Syed Mohammad Faisal | Finance Researcher, Jazan University";
+const title = "Dr. Syed Mohammad Faisal | Professor, Researcher & Computer Scientist";
 const description =
-  "Academic website of Dr. Syed Mohammad Faisal, Finance Strategist at Jazan University, Saudi Arabia â€” research in Finance, ESG, Corporate Governance, FinTech and AI in Accounting.";
+  "Official website of Dr. Syed Mohammad Faisal featuring research publications, academic profile, patents, books, conferences, teaching, and contact information.";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -24,9 +24,11 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "/" },
+      { property: "og:image", content: profile.portrait },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
+      { name: "twitter:image", content: profile.portrait },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -38,6 +40,8 @@ export const Route = createFileRoute("/")({
           name: profile.name,
           jobTitle: "Finance Strategist",
           description,
+          image: profile.portrait,
+          url: "/",
           affiliation: {
             "@type": "CollegeOrUniversity",
             name: "Jazan University",
@@ -52,7 +56,7 @@ export const Route = createFileRoute("/")({
             "Sustainable Business",
             "Financial Markets",
           ],
-          sameAs: [profile.source],
+          sameAs: [profile.source, profile.linkedin],
         }),
       },
     ],

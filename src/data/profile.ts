@@ -10,6 +10,8 @@ export const profile = {
   portrait:
     "https://lh3.googleusercontent.com/sitesv/AG8ngQVPlIuuYDvf0GPZiOcQvbb7C5NpM5HMVWonpXT4NgfuSdTyQv0m6z4T0sa-kk4pwyiOUeTnvGSNBaGtvC7V2dHamK4o17IXfLg1qbvcvLpobi2tzDdl2OkfC8h-jZn-i8puq7Hxcg6vX1xdnf48u7Z221zCY3eRs1PPrAamKDROJFHdtiE1-2HK2SU5MVit8NuvcYPAcrvs0xjiYAg8qBUtnhPBPxCANCE4Ib3qd04=w1280",
   source: "https://sites.google.com/view/dr-faisal/home",
+  linkedin:
+    "https://www.linkedin.com/in/dr-syed-mohammad-faisal-92b39122",
   welcome: [
     "Welcome to my academic website.",
     "I am Dr. Syed Mohammad Faisal, Finance Strategist at Jazan University, Saudi Arabia. My teaching and research interests include Finance, ESG, Corporate Governance, FinTech, Artificial Intelligence in Accounting and Finance, and Sustainable Business. This website presents my academic profile, research publications, teaching experience, and professional activities.",

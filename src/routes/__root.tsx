@@ -7,11 +7,10 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import smfaisalLogo from "../assets/smfaisal.png";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { ThemeProvider } from "@/components/site/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -41,9 +40,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -81,14 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Dr. Syed Mohammad Faisal | Professor, Researcher & Computer Scientist" },
+      { name: "description", content: "Official website of Dr. Syed Mohammad Faisal featuring research publications, academic profile, patents, books, conferences, teaching, and contact information." },
+      { name: "author", content: "Dr. Syed Mohammad Faisal" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "keywords", content: "Dr. Syed Mohammad Faisal, professor, researcher, computer scientist, finance, Jazan University, research publications, ESG, FinTech, corporate governance" },
+      { property: "og:title", content: "Dr. Syed Mohammad Faisal | Professor, Researcher & Computer Scientist" },
+      { property: "og:description", content: "Official website of Dr. Syed Mohammad Faisal featuring research publications, academic profile, patents, books, conferences, teaching, and contact information." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Dr. Syed Mohammad Faisal" },
+      { property: "og:image", content: "https://lh3.googleusercontent.com/sitesv/AG8ngQVPlIuuYDvf0GPZiOcQvbb7C5NpM5HMVWonpXT4NgfuSdTyQv0m6z4T0sa-kk4pwyiOUeTnvGSNBaGtvC7V2dHamK4o17IXfLg1qbvcvLpobi2tzDdl2OkfC8h-jZn-i8puq7Hxcg6vX1xdnf48u7Z221zCY3eRs1PPrAamKDROJFHdtiE1-2HK2SU5MVit8NuvcYPAcrvs0xjiYAg8qBUtnhPBPxCANCE4Ib3qd04=w1280" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Dr. Syed Mohammad Faisal | Professor, Researcher & Computer Scientist" },
+      { name: "twitter:description", content: "Official website of Dr. Syed Mohammad Faisal featuring research publications, academic profile, patents, books, conferences, teaching, and contact information." },
+      { name: "twitter:image", content: "https://lh3.googleusercontent.com/sitesv/AG8ngQVPlIuuYDvf0GPZiOcQvbb7C5NpM5HMVWonpXT4NgfuSdTyQv0m6z4T0sa-kk4pwyiOUeTnvGSNBaGtvC7V2dHamK4o17IXfLg1qbvcvLpobi2tzDdl2OkfC8h-jZn-i8puq7Hxcg6vX1xdnf48u7Z221zCY3eRs1PPrAamKDROJFHdtiE1-2HK2SU5MVit8NuvcYPAcrvs0xjiYAg8qBUtnhPBPxCANCE4Ib3qd04=w1280" },
     ],
     links: [
       {
