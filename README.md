@@ -22,6 +22,16 @@ UPSTASH_REDIS_REST_URL=https://your-redis-instance.upstash.io
 UPSTASH_REDIS_REST_TOKEN=your-rest-token
 ```
 
+The contact form sends mail through [Resend](https://resend.com/). Add these server environment variables as well:
+
+```sh
+RESEND_API_KEY=re_your-api-key
+RESEND_FROM_EMAIL=Website Contact <contact@your-verified-domain.com>
+RESEND_TO_EMAIL=faisalsharar786@gmail.com
+```
+
+`RESEND_FROM_EMAIL` must use a domain verified in Resend. `RESEND_TO_EMAIL` is optional and defaults to the site's contact email.
+
 For local development, create a `.env` file from `.env.example`. Set the same variables in the production host's environment settings. The credentials must never use the `VITE_` prefix, which would expose them to browsers.
 
 ```sh

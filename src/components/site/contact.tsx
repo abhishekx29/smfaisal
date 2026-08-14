@@ -33,13 +33,28 @@ export function Contact() {
     defaultValues: { name: "", email: "", subject: "", message: "" },
   });
 
-  const onSubmit = (values: FormValues) => {
-    const body = encodeURIComponent(`${values.message}\n\n— ${values.name} (${values.email})`);
-    window.location.href = `mailto:?subject=${encodeURIComponent(values.subject)}&body=${body}`;
-    toast.success("Opening your email client…", {
-      description: "Your message has been prepared for sending.",
-    });
-    form.reset();
+  const onSubmit = async (values: FormValues) => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      const result = (await response.json().catch(() => null)) as { error?: string } | null;
+      if (!response.ok) {
+        throw new Error(result?.error || "Unable to send your message right now.");
+      }
+
+      toast.success("Message sent", {
+        description: "Thank you. Your message has been delivered.",
+      });
+      form.reset();
+    } catch (error) {
+      toast.error("Message not sent", {
+        description: error instanceof Error ? error.message : "Please try again in a moment.",
+      });
+    }
   };
 
   return (
@@ -109,11 +124,17 @@ export function Contact() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" size="lg" className="w-full rounded-xl">
-                  <Send className="size-4" /> Send message
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full rounded-xl"
+                  disabled={form.formState.isSubmitting}
+                >
+                  <Send className="size-4" />{" "}
+                  {form.formState.isSubmitting ? "Sending..." : "Send message"}
                 </Button>
                 <p className="text-center text-xs text-muted-foreground">
-                  Messages open in your email client addressed on behalf of {profile.shortName}.
+                  Your message will be sent directly to {profile.shortName}.
                 </p>
               </form>
             </Form>
@@ -122,10 +143,24 @@ export function Contact() {
 
         <Reveal direction="right" className="space-y-4 lg:justify-self-end lg:w-full">
           {[
-            { icon: Building2, label: "Institution", value: `${contact.department}, ${contact.institution}` },
+            {
+              icon: Building2,
+              label: "Institution",
+              value: `${contact.department}, ${contact.institution}`,
+            },
             { icon: MapPin, label: "Location", value: contact.address },
-            { icon: Globe, label: "Academic website", value: contact.website, href: contact.website },
-            { icon: Mail, label: "Email", value: "faisalsharar786@gmail.com", href: "mailto:faisalsharar786@gmail.com" },
+            {
+              icon: Globe,
+              label: "Academic website",
+              value: contact.website,
+              href: contact.website,
+            },
+            {
+              icon: Mail,
+              label: "Email",
+              value: "faisalsharar786@gmail.com",
+              href: "mailto:faisalsharar786@gmail.com",
+            },
             { icon: Phone, label: "Phone", value: "00918601682557", href: "tel:00918601682557" },
           ].map((item) => (
             <div key={item.label} className="elevate-card flex items-start gap-4 rounded-2xl p-5">
@@ -146,7 +181,9 @@ export function Contact() {
                     {item.value}
                   </a>
                 ) : (
-                  <p className="mt-1 break-words whitespace-normal text-sm text-muted-foreground">{item.value}</p>
+                  <p className="mt-1 break-words whitespace-normal text-sm text-muted-foreground">
+                    {item.value}
+                  </p>
                 )}
               </div>
             </div>
