@@ -1,23 +1,29 @@
 import { createServerFn } from "@tanstack/react-start";
-import { getCookie, setCookie } from "@tanstack/start-server-core";
 
-const sessionCookieName = "site-visit-session";
-const sessions = new Map<string, number>();
+const counterKey = "site-visits";
 
-export const incrementSiteVisit = createServerFn({ method: "POST" }).handler(() => {
-  let sessionId = getCookie(sessionCookieName);
-  if (!sessionId) {
-    sessionId = crypto.randomUUID();
-    setCookie(sessionCookieName, sessionId, {
-      httpOnly: true,
-      maxAge: 60 * 60 * 24 * 365,
-      path: "/",
-      sameSite: "lax",
-      secure: process.env["NODE_ENV"] === "production",
-    });
+async function incrementVisitCounter(): Promise<number> {
+  const url = process.env["UPSTASH_REDIS_REST_URL"];
+  const token = process.env["UPSTASH_REDIS_REST_TOKEN"];
+
+  if (!url || !token) {
+    throw new Error("Site visit counter is not configured.");
   }
 
-  const nextVisitCount = (sessions.get(sessionId) ?? 0) + 1;
-  sessions.set(sessionId, nextVisitCount);
-  return nextVisitCount;
-});
+  const response = await fetch(`${url.replace(/\/$/, "")}/incr/${counterKey}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Unable to increment the site visit counter: ${response.status}`);
+  }
+
+  const payload = (await response.json()) as { result?: unknown };
+  if (typeof payload.result !== "number") {
+    throw new Error("Site visit counter returned an invalid response.");
+  }
+
+  return payload.result;
+}
+
+export const incrementSiteVisit = createServerFn({ method: "POST" }).handler(incrementVisitCounter);
