@@ -91,7 +91,7 @@ async function handleContactRequest(request: Request): Promise<Response> {
       from,
       to: [process.env.RESEND_TO_EMAIL || contactRecipient],
       reply_to: email,
-      subject: `[Website contact] ${subject}`,
+      subject: "Mail from my Website",
       text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
     }),
   });
