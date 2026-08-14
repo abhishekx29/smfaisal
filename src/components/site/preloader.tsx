@@ -2,24 +2,14 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 import smfaisalLogo from "@/assets/smfaisal.png";
 
-const PRELOADER_KEY = "smfaisal-preloader-seen";
-
 export function Preloader() {
   const [visible, setVisible] = useState(true);
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const hasSeenPreloader = window.sessionStorage.getItem(PRELOADER_KEY);
-
-    if (hasSeenPreloader) {
-      setVisible(false);
-      return;
-    }
-
     const timer = window.setTimeout(() => {
-      window.sessionStorage.setItem(PRELOADER_KEY, "true");
       setVisible(false);
-    }, 650);
+    }, 3000);
 
     return () => window.clearTimeout(timer);
   }, []);
@@ -51,7 +41,7 @@ export function Preloader() {
                   r="46"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
-                  transition={{ duration: shouldReduceMotion ? 0 : 0.6, ease: "easeInOut" }}
+                  transition={{ duration: shouldReduceMotion ? 0 : 3, ease: "easeInOut" }}
                 />
               </svg>
               <img src={smfaisalLogo} alt="" />
