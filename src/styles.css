@@ -244,6 +244,68 @@
   letter-spacing: 0.01em;
 }
 
+.preloader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  width: 6.5rem;
+  height: 6.5rem;
+  margin: -3.25rem 0 0 -3.25rem;
+  pointer-events: none;
+}
+
+.preloader__content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.preloader__mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.preloader__mark img {
+  position: relative;
+  z-index: 1;
+  width: 4.25rem;
+  height: 4.25rem;
+  object-fit: contain;
+  border-radius: 50%;
+  background: var(--card);
+}
+
+.preloader__ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.preloader__ring-track,
+.preloader__ring-fill {
+  fill: none;
+  stroke-width: 3;
+}
+
+.preloader__ring-track {
+  stroke: color-mix(in oklab, var(--navy) 14%, var(--border));
+}
+
+.preloader__ring-fill {
+  stroke: var(--gold);
+  stroke-linecap: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader { transition: none; }
+}
+
 @keyframes aurora-drift {
   0% {
     transform: translate3d(-2%, -1%, 0) scale(1);

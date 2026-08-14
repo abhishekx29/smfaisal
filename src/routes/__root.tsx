@@ -12,6 +12,7 @@ import { type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import smfaisalLogo from "../assets/smfaisal.png";
 import { ThemeProvider } from "@/components/site/theme-provider";
+import { Preloader } from "@/components/site/preloader";
 import { Toaster } from "@/components/ui/sonner";
 
 
@@ -126,6 +127,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
+        <Preloader />
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
         <Toaster position="top-center" richColors />
