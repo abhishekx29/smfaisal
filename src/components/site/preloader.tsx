@@ -7,11 +7,34 @@ export function Preloader() {
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const timer = window.setTimeout(() => {
-      setVisible(false);
-    }, 3000);
+    const startedAt = window.performance.now();
+    let pageLoaded = document.readyState === "complete";
+    let minimumTimeElapsed = false;
 
-    return () => window.clearTimeout(timer);
+    const dismissWhenReady = () => {
+      if (pageLoaded && minimumTimeElapsed) {
+        document.body.classList.add("preloader-complete");
+        setVisible(false);
+      }
+    };
+
+    const handleLoad = () => {
+      pageLoaded = true;
+      dismissWhenReady();
+    };
+
+    window.addEventListener("load", handleLoad);
+
+    const timer = window.setTimeout(() => {
+      minimumTimeElapsed = true;
+      dismissWhenReady();
+    }, Math.max(3000 - (window.performance.now() - startedAt), 0));
+
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("load", handleLoad);
+      document.body.classList.remove("preloader-complete");
+    };
   }, []);
 
   return (

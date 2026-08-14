@@ -115,7 +115,7 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         <Preloader />
-        {children}
+        <div className="site-content">{children}</div>
         <Scripts />
       </body>
     </html>

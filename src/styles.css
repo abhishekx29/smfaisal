@@ -167,6 +167,14 @@
     overflow-x: hidden;
   }
 
+  .site-content {
+    visibility: hidden;
+  }
+
+  body.preloader-complete .site-content {
+    visibility: visible;
+  }
+
   ::selection {
     background: color-mix(in oklab, var(--navy) 22%, transparent);
   }
