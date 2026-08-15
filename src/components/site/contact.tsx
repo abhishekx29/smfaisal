@@ -91,7 +91,7 @@ export function Contact() {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input type="email" placeholder="you@university.edu" {...field} />
+                          <Input type="email" placeholder="Your E-Mail Address" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -105,7 +105,7 @@ export function Contact() {
                     <FormItem>
                       <FormLabel>Subject</FormLabel>
                       <FormControl>
-                        <Input placeholder="Research collaboration" {...field} />
+                        <Input placeholder="Your Subject" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -118,7 +118,7 @@ export function Contact() {
                     <FormItem>
                       <FormLabel>Message</FormLabel>
                       <FormControl>
-                        <Textarea rows={6} placeholder="How can I help?" {...field} />
+                        <Textarea rows={6} placeholder="Write your message here..." {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
