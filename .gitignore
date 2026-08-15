@@ -11,6 +11,7 @@ node_modules
 .env
 .env.*
 !.env.example
+resend API key.txt
 dist
 dist-ssr
 .output
